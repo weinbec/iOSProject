@@ -7,23 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB45457C2088DB3300BDEF19 /* recources in Resources */ = {isa = PBXBuildFile; fileRef = FB45457B2088DB3300BDEF19 /* recources */; };
 		FBB224EE20866E6C005E7613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB224ED20866E6C005E7613 /* AppDelegate.swift */; };
-		FBB224F020866E6C005E7613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB224EF20866E6C005E7613 /* ViewController.swift */; };
 		FBB224F320866E6C005E7613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB224F120866E6C005E7613 /* Main.storyboard */; };
 		FBB224F620866E6C005E7613 /* iOSProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBB224F420866E6C005E7613 /* iOSProject.xcdatamodeld */; };
 		FBB224F820866E6C005E7613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB224F720866E6C005E7613 /* Assets.xcassets */; };
 		FBB224FB20866E6C005E7613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB224F920866E6C005E7613 /* LaunchScreen.storyboard */; };
+		FBB22503208681D9005E7613 /* checkSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB22502208681D9005E7613 /* checkSetViewController.swift */; };
+		FBB2250520868247005E7613 /* checkColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2250420868247005E7613 /* checkColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB45457B2088DB3300BDEF19 /* recources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = recources; sourceTree = "<group>"; };
+		FB45457E2088E42B00BDEF19 /* OneGreenDiamondEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OneGreenDiamondEmpty.png; sourceTree = "<group>"; };
 		FBB224EA20866E6B005E7613 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB224ED20866E6C005E7613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FBB224EF20866E6C005E7613 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FBB224F220866E6C005E7613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBB224F520866E6C005E7613 /* iOSProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSProject.xcdatamodel; sourceTree = "<group>"; };
 		FBB224F720866E6C005E7613 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBB224FA20866E6C005E7613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBB224FC20866E6C005E7613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBB22502208681D9005E7613 /* checkSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkSetViewController.swift; sourceTree = "<group>"; };
+		FBB2250420868247005E7613 /* checkColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +61,16 @@
 		FBB224EC20866E6B005E7613 /* iOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				FBB22502208681D9005E7613 /* checkSetViewController.swift */,
 				FBB224ED20866E6C005E7613 /* AppDelegate.swift */,
-				FBB224EF20866E6C005E7613 /* ViewController.swift */,
 				FBB224F120866E6C005E7613 /* Main.storyboard */,
 				FBB224F720866E6C005E7613 /* Assets.xcassets */,
 				FBB224F920866E6C005E7613 /* LaunchScreen.storyboard */,
 				FBB224FC20866E6C005E7613 /* Info.plist */,
 				FBB224F420866E6C005E7613 /* iOSProject.xcdatamodeld */,
+				FBB2250420868247005E7613 /* checkColorViewController.swift */,
+				FB45457E2088E42B00BDEF19 /* OneGreenDiamondEmpty.png */,
+				FB45457B2088DB3300BDEF19 /* recources */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -125,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB45457C2088DB3300BDEF19 /* recources in Resources */,
 				FBB224FB20866E6C005E7613 /* LaunchScreen.storyboard in Resources */,
 				FBB224F820866E6C005E7613 /* Assets.xcassets in Resources */,
 				FBB224F320866E6C005E7613 /* Main.storyboard in Resources */,
@@ -138,7 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBB224F020866E6C005E7613 /* ViewController.swift in Sources */,
+				FBB22503208681D9005E7613 /* checkSetViewController.swift in Sources */,
+				FBB2250520868247005E7613 /* checkColorViewController.swift in Sources */,
 				FBB224EE20866E6C005E7613 /* AppDelegate.swift in Sources */,
 				FBB224F620866E6C005E7613 /* iOSProject.xcdatamodeld in Sources */,
 			);
