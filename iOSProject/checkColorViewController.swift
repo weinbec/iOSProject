@@ -27,7 +27,7 @@ class checkColorViewController: UIViewController {
 //            var aImage: UIImage
 //          // aImage = #imageLiteral(resourceName: "OneGreenDiamondEmpty.png")
 //            cardButton[0].setImage(aImage, for: .normal)
-            print("green")
+           // print("green")
         }
     }
     
