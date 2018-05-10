@@ -11,107 +11,141 @@ import UIKit
 
 class playSetViewController: UIViewController {
     var username =  ""
+    var setsFound = 0
+    var amountSelected = 0
+    var cardsSelected = [card]()
     
+    @IBOutlet weak var setFoundLabel: UILabel!
+    @IBOutlet weak var cardLeftLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
+    var game = setGame()
     
+    @IBAction func threeMoreButton(_ sender: Any) {
+        if(game.cardsOnTable.count == 12) {
+            game.threeMore()
+            
+            var buttonImg: UIImage
+            buttonImg = game.cardsOnTable[12].pic
+            cardButtons[12].setImage(buttonImg, for: .normal)
+            
+            var buttonImg2: UIImage
+            buttonImg2 = game.cardsOnTable[13].pic
+            cardButtons[13].setImage(buttonImg2, for: .normal)
+            
+            var buttonImg3: UIImage
+            buttonImg3 = game.cardsOnTable[14].pic
+            cardButtons[14].setImage(buttonImg3, for: .normal)
+            } else {
+                print("too many cards out")
+            }
+            updateView()
+    }
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBAction func pressedButton(_ sender: Any) {
+        
+        let button = sender as! UIButton
+ 
+        print(game.cardsOnTable[button.tag].name())
+        cardsSelected.append(game.cardsOnTable[button.tag])
+        
+        if cardsSelected.count == 3 {
+            print("there are three cards selected")
+        }
+        
+//        if button.backgroundColor == UIColor.blue {
+//            button.backgroundColor = UIColor.white
+//            amountSelected = amountSelected - 1
+//            let position = findImgInDeck(thePic: button.currentImage!, aDeck: cardsSelected)
+//            cardsSelected.remove(at: position)
+//        } else {
+//            button.backgroundColor = UIColor.blue
+//            amountSelected = amountSelected + 1
+//            cardsSelected.append(game.cardsOnTable[button.tag])
+//        }
+        
+//        if amountSelected == 3 {
+//            if game.checkSet(one: cardsSelected[0], two: cardsSelected[1], three: cardsSelected[2]) {
+//                print ("there is a set")
+//                setsFound = setsFound + 1
+//                let a = findImgInDeck(thePic: cardsSelected[0].pic, aDeck: game.cardsOnTable)
+//                let b = findImgInDeck(thePic: cardsSelected[1].pic, aDeck: game.cardsOnTable)
+//                let c = findImgInDeck(thePic: cardsSelected[2].pic, aDeck: game.cardsOnTable)
+//                game.cardsOnTable.remove(at: a)
+//                game.oneMore()
+//                var buttonImg: UIImage
+//                buttonImg = game.cardsOnTable[9].pic
+//                cardButtons[a].setImage(buttonImg, for: .normal)
+//
+//                game.cardsOnTable.remove(at: b)
+//                game.oneMore()
+//                var buttonImg2: UIImage
+//                buttonImg2 = game.cardsOnTable[10].pic
+//                cardButtons[b].setImage(buttonImg2, for: .normal)
+//
+//                game.cardsOnTable.remove(at: c)
+//                game.oneMore()
+//                var buttonImg3: UIImage
+//                buttonImg3 = game.cardsOnTable[11].pic
+//                cardButtons[c].setImage(buttonImg3, for: .normal)
+//                updateView()
+//
+//            } else {
+//                print ("no set")
+//                print(cardsSelected[0].name())
+//                print(cardsSelected[1].name())
+//                print(cardsSelected[2].name())
+//                print("00000")
+//            }
+//            cardsSelected.removeAll()
+//        }
+        
+    }
     
     override func viewDidLoad() {
-        let OneGreenDiamondFull = #imageLiteral(resourceName: "OneGreenDiamondFull.png")
-        let OneGreenDiamondEmpty = #imageLiteral(resourceName: "OneGreenDiamondEmpty.png")
-        let OneGreenDiamondLined = #imageLiteral(resourceName: "OneGreenDiamondLined.png")
-                let OneGreenOvalFull = #imageLiteral(resourceName: "OneGreenOvalFull.png")
-                let OneGreenOvalEmpty = #imageLiteral(resourceName: "OneGreenOvalEmpty.png")
-                let OneGreenOvalLined = #imageLiteral(resourceName: "OneGreenOvalLined.png")
-               let OneGreenSFull = #imageLiteral(resourceName: "OneGreenSFull.png")
-                let OneGreenSEmpty = #imageLiteral(resourceName: "OneGreenSEmpty.png")
-                let OneGreenSLined = #imageLiteral(resourceName: "OneGreenSLined.png")
-                let OneRedDiamondFull = #imageLiteral(resourceName: "OneRedDiamondFull.png")
-                let OneRedDiamondEmpty = #imageLiteral(resourceName: "OneRedDiamondEmpty.png")
-                let OneRedDiamondLined = #imageLiteral(resourceName: "OneRedDiamondLined.png")
-                        let OneRedOvalFull = #imageLiteral(resourceName: "OneRedOvalFull.png")
-                        let OneRedOvalEmpty = #imageLiteral(resourceName: "OneRedOvalEmpty.png")
-                        let OneRedOvalLined = #imageLiteral(resourceName: "OneRedOvalLined.png")
-                       let OneRedSFull = #imageLiteral(resourceName: "OneRedSFull.png")
-                        let OneRedSEmpty = #imageLiteral(resourceName: "OneRedSEmpty.png")
-                        let OneRedSLined = #imageLiteral(resourceName: "OneRedSLined.png")
-                let OnePurpleDiamondFull = #imageLiteral(resourceName: "OnePurpleDiamondFull.png")
-                let OnePurpleDiamondEmpty = #imageLiteral(resourceName: "OnePurpleDiamondEmpty.png")
-                let OnePurpleDiamondLined = #imageLiteral(resourceName: "OnePurpleDiamondLined.png")
-                        let OnePurpleOvalFull = #imageLiteral(resourceName: "OnePurpleOvalFull.png")
-                        let OnePurpleOvalEmpty = #imageLiteral(resourceName: "OnePurpleOvalEmpty.png")
-                        let OnePurpleOvalLined = #imageLiteral(resourceName: "OnePurpleOvalLined.png")
-                       let OnePurpleSFull = #imageLiteral(resourceName: "OnePurpleSFull.png")
-                        let OnePurpleSEmpty = #imageLiteral(resourceName: "OnePurpleSEmpty.png")
-                        let OnePurpleSLined = #imageLiteral(resourceName: "OnePurpleSLined.png")
+        usernameLabel.text = username
         
-                let TwoGreenDiamondFull = #imageLiteral(resourceName: "TwoGreenDiamondFull.png")
-                let TwoGreenDiamondEmpty = #imageLiteral(resourceName: "TwoGreenDiamondEmpty.png")
-                let TwoGreenDiamondLined = #imageLiteral(resourceName: "TwoGreenDiamondLined.png")
-                        let TwoGreenOvalFull = #imageLiteral(resourceName: "TwoGreenOvalFull.png")
-                        let TwoGreenOvalEmpty = #imageLiteral(resourceName: "TwoGreenOvalEmpty.png")
-                        let TwoGreenOvalLined = #imageLiteral(resourceName: "TwoGreenOvalLined.png")
-                       let TwoGreenSFull = #imageLiteral(resourceName: "TwoGreenSFull.png")
-                        let TwoGreenSEmpty = #imageLiteral(resourceName: "TwoGreenSEmpty.png")
-                        let TwoGreenSLined = #imageLiteral(resourceName: "TwoGreenSLined.png")
-                        let TwoRedDiamondFull = #imageLiteral(resourceName: "TwoRedDiamondFull.png")
-                        let TwoRedDiamondEmpty = #imageLiteral(resourceName: "TwoRedDiamondEmpty.png")
-                        let TwoRedDiamondLined = #imageLiteral(resourceName: "TwoRedDiamondLined.png")
-                                let TwoRedOvalFull = #imageLiteral(resourceName: "TwoRedOvalFull.png")
-                                let TwoRedOvalEmpty = #imageLiteral(resourceName: "TwoRedOvalEmpty.png")
-                                let TwoRedOvalLined = #imageLiteral(resourceName: "TwoRedOvalLined.png")
-                               let TwoRedSFull = #imageLiteral(resourceName: "TwoRedSFull.png")
-                                let TwoRedSEmpty = #imageLiteral(resourceName: "TwoRedSEmpty.png")
-                                let TwoRedSLined = #imageLiteral(resourceName: "TwoRedSLined.png")
-                        let TwoPurpleDiamondFull = #imageLiteral(resourceName: "TwoPurpleDiamondFull.png")
-                        let TwoPurpleDiamondEmpty = #imageLiteral(resourceName: "TwoPurpleDiamondEmpty.png")
-                        let TwoPurpleDiamondLined = #imageLiteral(resourceName: "TwoPurpleDiamondLined.png")
-                                let TwoPurpleOvalFull = #imageLiteral(resourceName: "TwoPurpleOvalFull.png")
-                                let TwoPurpleOvalEmpty = #imageLiteral(resourceName: "TwoPurpleOvalEmpty.png")
-                                let TwoPurpleOvalLined = #imageLiteral(resourceName: "TwoPurpleOvalLined.png")
-                               let TwoPurpleSFull = #imageLiteral(resourceName: "TwoPurpleSFull.png")
-                                let TwoPurpleSEmpty = #imageLiteral(resourceName: "TwoPurpleSEmpty.png")
-                                let TwoPurpleSLined = #imageLiteral(resourceName: "TwoPurpleSLined.png")
+//        print(game.cardsOnTable.count)
+//        print(game.cardsInDeck.count)
+//        print("----")
         
-                let ThreeGreenDiamondFull = #imageLiteral(resourceName: "ThreeGreenDiamondFull.png")
-                let ThreeGreenDiamondEmpty = #imageLiteral(resourceName: "ThreeGreenDiamondEmpty.png")
-                let ThreeGreenDiamondLined = #imageLiteral(resourceName: "ThreeGreenDiamondLined.png")
-                        let ThreeGreenOvalFull = #imageLiteral(resourceName: "ThreeGreenOvalFull.png")
-                        let ThreeGreenOvalEmpty = #imageLiteral(resourceName: "ThreeGreenOvalEmpty.png")
-                        let ThreeGreenOvalLined = #imageLiteral(resourceName: "ThreeGreenOvalLined.png")
-                       let ThreeGreenSFull = #imageLiteral(resourceName: "ThreeGreenSFull.png")
-                        let ThreeGreenSEmpty = #imageLiteral(resourceName: "ThreeGreenSEmpty.png")
-                        let ThreeGreenSLined = #imageLiteral(resourceName: "ThreeGreenSLined.png")
-                        let ThreeRedDiamondFull = #imageLiteral(resourceName: "ThreeRedDiamondFull.png")
-                        let ThreeRedDiamondEmpty = #imageLiteral(resourceName: "ThreeRedDiamondEmpty.png")
-                        let ThreeRedDiamondLined = #imageLiteral(resourceName: "ThreeRedDiamondLined.png")
-                                let ThreeRedOvalFull = #imageLiteral(resourceName: "ThreeRedOvalFull.png")
-                                let ThreeRedOvalEmpty = #imageLiteral(resourceName: "ThreeRedOvalEmpty.png")
-                                let ThreeRedOvalLined = #imageLiteral(resourceName: "ThreeRedOvalLined.png")
-                               let ThreeRedSFull = #imageLiteral(resourceName: "ThreeRedSFull.png")
-                                let ThreeRedSEmpty = #imageLiteral(resourceName: "ThreeRedSEmpty.png")
-                                let ThreeRedSLined = #imageLiteral(resourceName: "ThreeRedSLined.png")
-                        let ThreePurpleDiamondFull = #imageLiteral(resourceName: "ThreePurpleDiamondFull.png")
-                        let ThreePurpleDiamondEmpty = #imageLiteral(resourceName: "ThreePurpleDiamondEmpty.png")
-                        let ThreePurpleDiamondLined = #imageLiteral(resourceName: "ThreePurpleDiamondLined.png")
-                                let ThreePurpleOvalFull = #imageLiteral(resourceName: "ThreePurpleOvalFull.png")
-                                let ThreePurpleOvalEmpty = #imageLiteral(resourceName: "ThreePurpleOvalEmpty.png")
-                                let ThreePurpleOvalLined = #imageLiteral(resourceName: "ThreePurpleOvalLined.png")
-                               let ThreePurpleSFull = #imageLiteral(resourceName: "ThreePurpleSFull.png")
-                                let ThreePurpleSEmpty = #imageLiteral(resourceName: "ThreePurpleSEmpty.png")
-                                let ThreePurpleSLined = #imageLiteral(resourceName: "ThreePurpleSLined.png")
-        
-        
+//        print(game.cardsOnTable.count)
+//        print(game.cardsInDeck.count)
 
-        
-
-        
-        
-
-
-
-        
-        print("in setgame")
-        print(username)
-        cardButtons[0].setImage(OneGreenDiamondFull, for: .normal)
+        game.startGame()
+        for i in 0...(game.cardsOnTable.count-1) {
+            var buttonImg: UIImage
+            buttonImg = game.cardsOnTable[i].pic
+            cardButtons[i].setImage(buttonImg, for: .normal)
+        }
+        updateView()
+    }
+    
+    func findCardInStack(aCard: card, adeck: [card]) -> Int{
+        for i in 0...adeck.count-1 {
+            if adeck[i].theSame(one: aCard) {
+                return i
+            }
+        }
+        return -1
+    }
+    
+    func findImgInDeck(thePic: UIImage, aDeck: [card]) -> Int {
+        for i in 0...aDeck.count {
+            if aDeck[i].pic == thePic {
+                print("---")
+                print(i)
+                print("---")
+                return i
+            }
+        }
+        return -1
+    }
+    
+    func updateView(){
+        cardLeftLabel.text = String(game.cardsInDeck.count)
+        setFoundLabel.text = String(setsFound)
+        for card in cardButtons {
+            card.backgroundColor = UIColor.white
+        }
     }
 }

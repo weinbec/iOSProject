@@ -10,6 +10,9 @@
 		FB45457C2088DB3300BDEF19 /* recources in Resources */ = {isa = PBXBuildFile; fileRef = FB45457B2088DB3300BDEF19 /* recources */; };
 		FB87F2B82090E837003D1AB5 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87F2B72090E837003D1AB5 /* loginViewController.swift */; };
 		FB87F2BA2090E89D003D1AB5 /* playSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87F2B92090E89D003D1AB5 /* playSetViewController.swift */; };
+		FBAFDC6C2090F55D0083E4B9 /* setGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFDC6B2090F55D0083E4B9 /* setGame.swift */; };
+		FBAFDC6E2090F6D10083E4B9 /* card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFDC6D2090F6D10083E4B9 /* card.swift */; };
+		FBAFDC702090F77A0083E4B9 /* deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFDC6F2090F77A0083E4B9 /* deck.swift */; };
 		FBB224EE20866E6C005E7613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB224ED20866E6C005E7613 /* AppDelegate.swift */; };
 		FBB224F320866E6C005E7613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB224F120866E6C005E7613 /* Main.storyboard */; };
 		FBB224F620866E6C005E7613 /* iOSProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBB224F420866E6C005E7613 /* iOSProject.xcdatamodeld */; };
@@ -23,6 +26,9 @@
 		FB45457B2088DB3300BDEF19 /* recources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = recources; sourceTree = "<group>"; };
 		FB87F2B72090E837003D1AB5 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		FB87F2B92090E89D003D1AB5 /* playSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playSetViewController.swift; sourceTree = "<group>"; };
+		FBAFDC6B2090F55D0083E4B9 /* setGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setGame.swift; sourceTree = "<group>"; };
+		FBAFDC6D2090F6D10083E4B9 /* card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = card.swift; sourceTree = "<group>"; };
+		FBAFDC6F2090F77A0083E4B9 /* deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deck.swift; sourceTree = "<group>"; };
 		FBB224EA20866E6B005E7613 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB224ED20866E6C005E7613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB224F220866E6C005E7613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +70,7 @@
 		FBB224EC20866E6B005E7613 /* iOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				FBAFDC6B2090F55D0083E4B9 /* setGame.swift */,
 				FBB22502208681D9005E7613 /* checkSetViewController.swift */,
 				FBB224ED20866E6C005E7613 /* AppDelegate.swift */,
 				FBB224F120866E6C005E7613 /* Main.storyboard */,
@@ -75,6 +82,8 @@
 				FB87F2B72090E837003D1AB5 /* loginViewController.swift */,
 				FB87F2B92090E89D003D1AB5 /* playSetViewController.swift */,
 				FB45457B2088DB3300BDEF19 /* recources */,
+				FBAFDC6D2090F6D10083E4B9 /* card.swift */,
+				FBAFDC6F2090F77A0083E4B9 /* deck.swift */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -151,12 +160,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBAFDC6C2090F55D0083E4B9 /* setGame.swift in Sources */,
 				FBB22503208681D9005E7613 /* checkSetViewController.swift in Sources */,
+				FBAFDC702090F77A0083E4B9 /* deck.swift in Sources */,
 				FB87F2BA2090E89D003D1AB5 /* playSetViewController.swift in Sources */,
 				FBB2250520868247005E7613 /* checkColorViewController.swift in Sources */,
 				FBB224EE20866E6C005E7613 /* AppDelegate.swift in Sources */,
 				FBB224F620866E6C005E7613 /* iOSProject.xcdatamodeld in Sources */,
 				FB87F2B82090E837003D1AB5 /* loginViewController.swift in Sources */,
+				FBAFDC6E2090F6D10083E4B9 /* card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
