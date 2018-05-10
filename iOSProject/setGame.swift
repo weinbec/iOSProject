@@ -45,16 +45,18 @@ class setGame {
     
     func threeMore(){
         for _ in 0...2 {
-            let num = Int(arc4random_uniform(UInt32(3)))
+            let num = Int(arc4random_uniform(UInt32(self.cardsInDeck.count)))
             cardsOnTable.append(self.cardsInDeck[num])
             cardsInDeck.remove(at: num)
         }
     }
     
-    func oneMore(){
-        let num = Int(arc4random_uniform(UInt32(3)))
-        cardsOnTable.append(self.cardsInDeck[num])
+    func oneMore() -> card{
+        let num = Int(arc4random_uniform(UInt32(self.cardsInDeck.count)))
+        let theCard = cardsInDeck[num]
+        cardsOnTable.append(theCard)
         cardsInDeck.remove(at: num)
+        return theCard
     }
     
     

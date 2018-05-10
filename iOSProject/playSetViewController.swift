@@ -21,95 +21,83 @@ class playSetViewController: UIViewController {
     var game = setGame()
     
     @IBAction func threeMoreButton(_ sender: Any) {
-        if(game.cardsOnTable.count == 12) {
-            game.threeMore()
-            
-            var buttonImg: UIImage
-            buttonImg = game.cardsOnTable[12].pic
-            cardButtons[12].setImage(buttonImg, for: .normal)
-            
-            var buttonImg2: UIImage
-            buttonImg2 = game.cardsOnTable[13].pic
-            cardButtons[13].setImage(buttonImg2, for: .normal)
-            
-            var buttonImg3: UIImage
-            buttonImg3 = game.cardsOnTable[14].pic
-            cardButtons[14].setImage(buttonImg3, for: .normal)
-            } else {
-                print("too many cards out")
-            }
-            updateView()
+//        if(game.cardsOnTable.count == 12) {
+//            game.threeMore()
+//
+//            var buttonImg: UIImage
+//            buttonImg = game.cardsOnTable[12].pic
+//            cardButtons[12].setImage(buttonImg, for: .normal)
+//
+//            var buttonImg2: UIImage
+//            buttonImg2 = game.cardsOnTable[13].pic
+//            cardButtons[13].setImage(buttonImg2, for: .normal)
+//
+//            var buttonImg3: UIImage
+//            buttonImg3 = game.cardsOnTable[14].pic
+//            cardButtons[14].setImage(buttonImg3, for: .normal)
+//            } else {
+//                print("too many cards out")
+//            }
+//            updateView()
     }
+    
     @IBOutlet weak var usernameLabel: UILabel!
     @IBAction func pressedButton(_ sender: Any) {
         
         let button = sender as! UIButton
  
-        print(game.cardsOnTable[button.tag].name())
-        cardsSelected.append(game.cardsOnTable[button.tag])
+        print(findCardFromButton(aButton: button).name())
         
-        if cardsSelected.count == 3 {
-            print("there are three cards selected")
+        
+        if button.backgroundColor == UIColor.blue {
+            button.backgroundColor = UIColor.white
+            if cardsSelected[0].theSame(one: findCardFromButton(aButton: button)) {
+                cardsSelected.remove(at: 0)
+            } else if cardsSelected[1].theSame(one: findCardFromButton(aButton: button)) {
+                cardsSelected.remove(at: 1)
+            } else if cardsSelected[2].theSame(one: findCardFromButton(aButton: button)) {
+                cardsSelected.remove(at: 2)
+            } else{
+                print("error removing selected card \(button.tag)")
+            }
+        } else {
+            button.backgroundColor = UIColor.blue
+            cardsSelected.append(findCardFromButton(aButton: button))
         }
         
-//        if button.backgroundColor == UIColor.blue {
-//            button.backgroundColor = UIColor.white
-//            amountSelected = amountSelected - 1
-//            let position = findImgInDeck(thePic: button.currentImage!, aDeck: cardsSelected)
-//            cardsSelected.remove(at: position)
-//        } else {
-//            button.backgroundColor = UIColor.blue
-//            amountSelected = amountSelected + 1
-//            cardsSelected.append(game.cardsOnTable[button.tag])
-//        }
         
-//        if amountSelected == 3 {
-//            if game.checkSet(one: cardsSelected[0], two: cardsSelected[1], three: cardsSelected[2]) {
-//                print ("there is a set")
-//                setsFound = setsFound + 1
-//                let a = findImgInDeck(thePic: cardsSelected[0].pic, aDeck: game.cardsOnTable)
-//                let b = findImgInDeck(thePic: cardsSelected[1].pic, aDeck: game.cardsOnTable)
-//                let c = findImgInDeck(thePic: cardsSelected[2].pic, aDeck: game.cardsOnTable)
-//                game.cardsOnTable.remove(at: a)
-//                game.oneMore()
-//                var buttonImg: UIImage
-//                buttonImg = game.cardsOnTable[9].pic
-//                cardButtons[a].setImage(buttonImg, for: .normal)
-//
-//                game.cardsOnTable.remove(at: b)
-//                game.oneMore()
-//                var buttonImg2: UIImage
-//                buttonImg2 = game.cardsOnTable[10].pic
-//                cardButtons[b].setImage(buttonImg2, for: .normal)
-//
-//                game.cardsOnTable.remove(at: c)
-//                game.oneMore()
-//                var buttonImg3: UIImage
-//                buttonImg3 = game.cardsOnTable[11].pic
-//                cardButtons[c].setImage(buttonImg3, for: .normal)
-//                updateView()
-//
-//            } else {
-//                print ("no set")
-//                print(cardsSelected[0].name())
-//                print(cardsSelected[1].name())
-//                print(cardsSelected[2].name())
-//                print("00000")
-//            }
-//            cardsSelected.removeAll()
-//        }
+        if cardsSelected.count == 3 {
+            findButtonOfCard(aCard: cardsSelected[0]).backgroundColor = UIColor.white
+            findButtonOfCard(aCard: cardsSelected[1]).backgroundColor = UIColor.white
+            findButtonOfCard(aCard: cardsSelected[2]).backgroundColor = UIColor.white
+            print("there are three cards selected")
+            print(cardsSelected[0].name() + cardsSelected[1].name() + cardsSelected[2].name())
+            if game.checkSet(one: cardsSelected[0], two: cardsSelected[1], three: cardsSelected[2]) {
+                setsFound = setsFound + 1
+                print("yes a set")
+                let first = findButtonOfCard(aCard: cardsSelected[0])
+                let second = findButtonOfCard(aCard: cardsSelected[1])
+                let third = findButtonOfCard(aCard: cardsSelected[2])
+                game.cardsOnTable.remove(at: findCardInStack(aCard: cardsSelected[0], adeck: game.cardsOnTable))
+                game.cardsOnTable.remove(at: findCardInStack(aCard: cardsSelected[1], adeck: game.cardsOnTable))
+                game.cardsOnTable.remove(at: findCardInStack(aCard: cardsSelected[2], adeck: game.cardsOnTable))
+                first.setImage(game.oneMore().pic, for: UIControlState.normal)
+                second.setImage(game.oneMore().pic, for: UIControlState.normal)
+                third.setImage(game.oneMore().pic, for: UIControlState.normal)
+            } else {
+                print("no")
+            }
+            cardsSelected.removeAll()
+        }
         
+        cardLeftLabel.text = String(game.cardsInDeck.count)
+        setFoundLabel.text = String(setsFound)
+        print(game.cardsOnTable.count)
     }
     
     override func viewDidLoad() {
         usernameLabel.text = username
         
-//        print(game.cardsOnTable.count)
-//        print(game.cardsInDeck.count)
-//        print("----")
-        
-//        print(game.cardsOnTable.count)
-//        print(game.cardsInDeck.count)
 
         game.startGame()
         for i in 0...(game.cardsOnTable.count-1) {
@@ -118,6 +106,26 @@ class playSetViewController: UIViewController {
             cardButtons[i].setImage(buttonImg, for: .normal)
         }
         updateView()
+    }
+    
+    func findButtonOfCard(aCard: card) -> UIButton {
+        for j in 0...cardButtons.count - 1 {
+            if cardButtons[j].currentImage == aCard.pic {
+                return cardButtons[j]
+            }
+        }
+        print("error returning button of card")
+        return cardButtons[0]
+    }
+    
+    func findCardFromButton(aButton: UIButton) -> card{         ////return the card that is on this button
+        for i in 0...game.cardsOnTable.count-1 {
+            if aButton.currentImage == game.cardsOnTable[i].pic {
+                return game.cardsOnTable[i]
+            }
+        }
+        print("error findCardFromButton")
+        return game.cardsOnTable[0]
     }
     
     func findCardInStack(aCard: card, adeck: [card]) -> Int{
@@ -129,17 +137,17 @@ class playSetViewController: UIViewController {
         return -1
     }
     
-    func findImgInDeck(thePic: UIImage, aDeck: [card]) -> Int {
-        for i in 0...aDeck.count {
-            if aDeck[i].pic == thePic {
-                print("---")
-                print(i)
-                print("---")
-                return i
-            }
-        }
-        return -1
-    }
+//    func findImgInDeck(thePic: UIImage, aDeck: [card]) -> Int {
+//        for i in 0...aDeck.count {
+//            if aDeck[i].pic == thePic {
+//                print("---")
+//                print(i)
+//                print("---")
+//                return i
+//            }
+//        }
+//        return -1
+//    }
     
     func updateView(){
         cardLeftLabel.text = String(game.cardsInDeck.count)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB45457C2088DB3300BDEF19 /* recources in Resources */ = {isa = PBXBuildFile; fileRef = FB45457B2088DB3300BDEF19 /* recources */; };
+		FB5AFD4B20A3E83E0030A7AC /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5AFD4A20A3E83E0030A7AC /* DirectionsViewController.swift */; };
 		FB87F2B82090E837003D1AB5 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87F2B72090E837003D1AB5 /* loginViewController.swift */; };
 		FB87F2BA2090E89D003D1AB5 /* playSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87F2B92090E89D003D1AB5 /* playSetViewController.swift */; };
 		FBAFDC6C2090F55D0083E4B9 /* setGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFDC6B2090F55D0083E4B9 /* setGame.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		FB45457B2088DB3300BDEF19 /* recources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = recources; sourceTree = "<group>"; };
+		FB5AFD4A20A3E83E0030A7AC /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		FB87F2B72090E837003D1AB5 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		FB87F2B92090E89D003D1AB5 /* playSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playSetViewController.swift; sourceTree = "<group>"; };
 		FBAFDC6B2090F55D0083E4B9 /* setGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setGame.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				FB45457B2088DB3300BDEF19 /* recources */,
 				FBAFDC6D2090F6D10083E4B9 /* card.swift */,
 				FBAFDC6F2090F77A0083E4B9 /* deck.swift */,
+				FB5AFD4A20A3E83E0030A7AC /* DirectionsViewController.swift */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				FB87F2BA2090E89D003D1AB5 /* playSetViewController.swift in Sources */,
 				FBB2250520868247005E7613 /* checkColorViewController.swift in Sources */,
 				FBB224EE20866E6C005E7613 /* AppDelegate.swift in Sources */,
+				FB5AFD4B20A3E83E0030A7AC /* DirectionsViewController.swift in Sources */,
 				FBB224F620866E6C005E7613 /* iOSProject.xcdatamodeld in Sources */,
 				FB87F2B82090E837003D1AB5 /* loginViewController.swift in Sources */,
 				FBAFDC6E2090F6D10083E4B9 /* card.swift in Sources */,
