@@ -196,6 +196,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMU-Xw-iDP">
+                                <rect key="frame" x="185" y="500" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rose Fire"/>
+                                <connections>
+                                    <action selector="roseFireLogin:" destination="CaA-n8-uE7" eventType="touchUpInside" id="SCz-ia-ANK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -219,7 +227,7 @@
         <!--Play Set View Controller-->
         <scene sceneID="VWW-Nl-9uR">
             <objects>
-                <viewController id="467-Qh-hAZ" customClass="playSetViewController" customModule="iOSProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playingGame" id="467-Qh-hAZ" customClass="playSetViewController" customModule="iOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j6b-ga-iw7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,7 +606,7 @@
                                         </state>
                                         <connections>
                                             <action selector="purpleButtonPressed:" destination="lL3-5E-xoy" eventType="touchUpInside" id="cCB-0Q-Vuk"/>
-                                            <segue destination="by9-a3-fWZ" kind="show" id="y5l-ht-Hqs"/>
+                                            <segue destination="by9-a3-fWZ" kind="show" id="fZ2-7i-u85"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bR-g4-eZs">
@@ -610,7 +618,7 @@
                                         </state>
                                         <connections>
                                             <action selector="redButtonPressed:" destination="lL3-5E-xoy" eventType="touchUpInside" id="kSl-sG-c6y"/>
-                                            <segue destination="by9-a3-fWZ" kind="show" id="JaV-h1-J2X"/>
+                                            <segue destination="by9-a3-fWZ" kind="show" id="wfB-5E-JDs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -900,9 +908,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8ql-hZ-v28"/>
+        <segue reference="wfB-5E-JDs"/>
         <segue reference="JsI-a0-4Io"/>
         <segue reference="rGo-id-h3a"/>
-        <segue reference="h8I-fN-m74"/>
+        <segue reference="Q4g-T2-Ute"/>
     </inferredMetricsTieBreakers>
 </document>

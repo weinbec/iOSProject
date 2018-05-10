@@ -8,15 +8,17 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
@@ -88,6 +90,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    //////////////////////////////////////
+    func handleLogin() {
+        print("handlelogin")
+        showGameViewController()
+    }
+    
+    func showGameViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "playingGame")
+    }
 
+}
+
+extension UIViewController {
+    var appDelegate : AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
 }
 

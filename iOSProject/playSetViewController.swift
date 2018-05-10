@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class playSetViewController: UIViewController {
     var username =  ""
@@ -21,24 +23,12 @@ class playSetViewController: UIViewController {
     var game = setGame()
     
     @IBAction func threeMoreButton(_ sender: Any) {
-//        if(game.cardsOnTable.count == 12) {
-//            game.threeMore()
-//
-//            var buttonImg: UIImage
-//            buttonImg = game.cardsOnTable[12].pic
-//            cardButtons[12].setImage(buttonImg, for: .normal)
-//
-//            var buttonImg2: UIImage
-//            buttonImg2 = game.cardsOnTable[13].pic
-//            cardButtons[13].setImage(buttonImg2, for: .normal)
-//
-//            var buttonImg3: UIImage
-//            buttonImg3 = game.cardsOnTable[14].pic
-//            cardButtons[14].setImage(buttonImg3, for: .normal)
-//            } else {
-//                print("too many cards out")
-//            }
-//            updateView()
+            if(game.cardsOnTable.count == 12) {
+                cardButtons[12].setImage(game.oneMore().pic, for: .normal)
+                cardButtons[13].setImage(game.oneMore().pic, for: .normal)
+                cardButtons[14].setImage(game.oneMore().pic, for: .normal)
+
+        }
     }
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -96,8 +86,7 @@ class playSetViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        usernameLabel.text = username
-        
+        usernameLabel.text = Auth.auth().currentUser?.uid
 
         game.startGame()
         for i in 0...(game.cardsOnTable.count-1) {
