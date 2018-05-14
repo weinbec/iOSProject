@@ -100,6 +100,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "playingGame")
     }
+    
+    @objc func handleLogout() {
+        //GIDSignIn.sharedInstance().signOut()  ///chance to save who you are signed in as with google, do not really need this line
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Error on signout")
+        }
+        showloginViewController()
+    }
+    
+    func showloginViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+    }
 
 }
 

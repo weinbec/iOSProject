@@ -20,39 +20,42 @@ class checkColorViewController: UIViewController {
         print("button pressed")
     }
     
+    @IBAction func pressedDone(_ sender: Any) {
+        print("Done action")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = colorOn
+        print(cardButton.count)
+        print("---")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(colorOn)
-        
-//        if colorOn == "Green" {
-//            let bigDeck = deck()
-//            var greenDeck = [card]()
-//            greenDeck.append(bigDeck.cards[20])
-//            var buttonImg = greenDeck[0].pic
-//            cardButton[0].setImage(buttonImg, for: .normal)
-////            for i in 0...bigDeck.cards.count-1 {
-////                if bigDeck.cards[i].color == "Green" {
-////                    greenDeck.append(bigDeck.cards[i])
-////                }
-////            }
-////
-////            for i in 0...cardButton.count-1 {
-////                var buttonImg: UIImage
-////                buttonImg = greenDeck[i].pic
-////                cardButton[i].setImage(buttonImg, for: .normal)
-////            }
-//
-//
-//        }
-//        if colorOn == "Red" {
-//            cardButton[0].setTitle("red", for: .normal)
-//        }
-//        if colorOn == "Purple" {
-//            cardButton[0].setTitle("purple", for: .normal)
-//        }
+        var displayDeck: [card] = []
+
+        if colorOn == "Green" {
+            displayDeck = findColorCards(color: colorOn!)
+        }
+        if colorOn == "Red" {
+          displayDeck = findColorCards(color: colorOn!)
+        }
+        if colorOn == "Purple" {
+           displayDeck = findColorCards(color: colorOn!)
+        }
+        for j in 0...cardButton.count-1 {
+            cardButton[j].setImage(displayDeck[j].pic, for: UIControlState.normal)
+        }
+    }
+    
+    func findColorCards(color: String) -> [card]{
+        let myDeck = deck()
+        var returnCards: [card] = []
+        for i in 0...myDeck.cards.count-1{
+            if myDeck.cards[i].color == color{
+                returnCards.append(myDeck.cards[i])
+            }
+        }
+        return returnCards
     }
     
 }

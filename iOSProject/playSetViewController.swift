@@ -16,13 +16,21 @@ class playSetViewController: UIViewController {
     var setsFound = 0
     var amountSelected = 0
     var cardsSelected = [card]()
+    var timeCount = 20
     
+    @IBOutlet weak var timerLabel: UILabel!
+   var gameTimer: Timer!
     @IBOutlet weak var setFoundLabel: UILabel!
     @IBOutlet weak var cardLeftLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
     var game = setGame()
     
+    var setCollectionRef: CollectionReference!
+    var setListener: ListenerRegistration!
+    
+    
     @IBAction func threeMoreButton(_ sender: Any) {
+       
             if(game.cardsOnTable.count == 12) {
                 cardButtons[12].setImage(game.oneMore().pic, for: .normal)
                 cardButtons[13].setImage(game.oneMore().pic, for: .normal)
@@ -86,15 +94,37 @@ class playSetViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        usernameLabel.text = Auth.auth().currentUser?.uid
-
+        super.viewDidLoad()
+       
         game.startGame()
         for i in 0...(game.cardsOnTable.count-1) {
             var buttonImg: UIImage
             buttonImg = game.cardsOnTable[i].pic
             cardButtons[i].setImage(buttonImg, for: .normal)
         }
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerFunc), userInfo: nil, repeats: true)
+        
         updateView()
+    }
+    
+    @objc func timerFunc(){
+      
+        if timeCount == 0 {
+            print("timer done")
+            gameTimer.invalidate()
+            gameOver()
+        } else {
+            timeCount = timeCount - 1
+            timerLabel.text = "Time: \(timeCount)"
+        }
+    }
+    
+    func gameOver(){
+        setCollectionRef = Firestore.firestore().collection("setGame")
+        let newGameSession = gameSession(username: (Auth.auth().currentUser?.uid)!, ////username
+                                         score: "\(setsFound)")
+        
+        self.setCollectionRef.addDocument(data: newGameSession.data)
     }
     
     func findButtonOfCard(aCard: card) -> UIButton {
@@ -126,19 +156,18 @@ class playSetViewController: UIViewController {
         return -1
     }
     
-//    func findImgInDeck(thePic: UIImage, aDeck: [card]) -> Int {
-//        for i in 0...aDeck.count {
-//            if aDeck[i].pic == thePic {
-//                print("---")
-//                print(i)
-//                print("---")
-//                return i
-//            }
-//        }
-//        return -1
-//    }
     
-    func updateView(){
+    override func viewDidDisappear(_ animated: Bool) {
+        appDelegate.handleLogout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
+    }
+    
+    
+    @objc func updateView(){
         cardLeftLabel.text = String(game.cardsInDeck.count)
         setFoundLabel.text = String(setsFound)
         for card in cardButtons {

@@ -17,28 +17,27 @@ class checkSetViewController: UIViewController {
     
     
 
+    @IBOutlet weak var countLabel: UILabel!
+    
     @IBAction func purpleButtonPressed(_ sender: Any) {
         colorOn = "Purple"
-        print(colorOn)
-        print("should be purple")
+        performSegue(withIdentifier: "checkIdSegue", sender: sender)
     }
     
     @IBAction func greenButtonPressed(_ sender: Any) {
         colorOn = "Green"
-        print(colorOn)
-        print("should be green")
+ 
+        performSegue(withIdentifier: "checkIdSegue", sender: sender)
         
     }
 
     @IBAction func redButtonPressed(_ sender: Any) {
         colorOn = "Red"
-        print(colorOn)
-        print("should be red")
+        performSegue(withIdentifier: "checkIdSegue", sender: sender)
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        print("the color uppppp here is \(colorOn)")
         if segue.destination is checkColorViewController
         {
             print("the color in here is \(colorOn)")

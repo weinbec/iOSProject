@@ -10,6 +10,8 @@
 		CFF9EFDDBFF386CA3ED5E09D /* Pods_iOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DAC52B4D08242EB062E8A5 /* Pods_iOSProject.framework */; };
 		FB2DCA5D20A497E300E63B7C /* checkSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2DCA5C20A497E300E63B7C /* checkSet.swift */; };
 		FB45457C2088DB3300BDEF19 /* recources in Resources */ = {isa = PBXBuildFile; fileRef = FB45457B2088DB3300BDEF19 /* recources */; };
+		FB4A03F120A9D36A004F3D72 /* gameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A03F020A9D36A004F3D72 /* gameSession.swift */; };
+		FB4A03F320A9ED8A004F3D72 /* leaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A03F220A9ED8A004F3D72 /* leaderBoardViewController.swift */; };
 		FB5AFD4B20A3E83E0030A7AC /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5AFD4A20A3E83E0030A7AC /* DirectionsViewController.swift */; };
 		FB5AFD4D20A3EA830030A7AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB5AFD4C20A3EA830030A7AC /* GoogleService-Info.plist */; };
 		FB87F2B82090E837003D1AB5 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87F2B72090E837003D1AB5 /* loginViewController.swift */; };
@@ -32,6 +34,8 @@
 		F2DAC52B4D08242EB062E8A5 /* Pods_iOSProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2DCA5C20A497E300E63B7C /* checkSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkSet.swift; sourceTree = "<group>"; };
 		FB45457B2088DB3300BDEF19 /* recources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = recources; sourceTree = "<group>"; };
+		FB4A03F020A9D36A004F3D72 /* gameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameSession.swift; sourceTree = "<group>"; };
+		FB4A03F220A9ED8A004F3D72 /* leaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaderBoardViewController.swift; sourceTree = "<group>"; };
 		FB5AFD4A20A3E83E0030A7AC /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		FB5AFD4C20A3EA830030A7AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB87F2B72090E837003D1AB5 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				FBAFDC6D2090F6D10083E4B9 /* card.swift */,
 				FBAFDC6F2090F77A0083E4B9 /* deck.swift */,
 				FB5AFD4A20A3E83E0030A7AC /* DirectionsViewController.swift */,
+				FB4A03F020A9D36A004F3D72 /* gameSession.swift */,
+				FB4A03F220A9ED8A004F3D72 /* leaderBoardViewController.swift */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -276,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB4A03F320A9ED8A004F3D72 /* leaderBoardViewController.swift in Sources */,
 				FBAFDC6C2090F55D0083E4B9 /* setGame.swift in Sources */,
 				FBB22503208681D9005E7613 /* checkSetViewController.swift in Sources */,
+				FB4A03F120A9D36A004F3D72 /* gameSession.swift in Sources */,
 				FBAFDC702090F77A0083E4B9 /* deck.swift in Sources */,
 				FB2DCA5D20A497E300E63B7C /* checkSet.swift in Sources */,
 				FB87F2BA2090E89D003D1AB5 /* playSetViewController.swift in Sources */,
