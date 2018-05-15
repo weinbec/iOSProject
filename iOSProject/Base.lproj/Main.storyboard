@@ -1246,10 +1246,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3x7-GF-dQF"/>
         <segue reference="oew-Fx-s7X"/>
         <segue reference="rGo-id-h3a"/>
-        <segue reference="z4w-3o-l4y"/>
+        <segue reference="h8I-fN-m74"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

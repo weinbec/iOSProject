@@ -16,7 +16,7 @@ class playSetViewController: UIViewController {
     var setsFound = 0
     var amountSelected = 0
     var cardsSelected = [card]()
-    var timeCount = 20
+    var timeCount = 60
     
     @IBOutlet weak var timerLabel: UILabel!
    var gameTimer: Timer!
