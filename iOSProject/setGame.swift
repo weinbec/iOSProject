@@ -96,5 +96,18 @@ class setGame {
         return colorVar && shapeVar && fillVar && numVar
     }
     
+    func checkSetInGroup(theDeck: [card]) -> Bool{
+        for i in 0...cardsOnTable.count {
+            for j in 0...cardsOnTable.count{
+                for k in 0...cardsOnTable.count{
+                    if checkSet(one: cardsOnTable[i], two: cardsOnTable[j], three: cardsOnTable[k]) {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
     
 }

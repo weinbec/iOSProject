@@ -43,11 +43,12 @@ class leaderBoardViewController: UIViewController {
             self.gameDataArray.sort(by: { (mq1, mq2) -> Bool in
                 return mq1.score > mq2.score
             })
-         
-            for i in 0...self.gameDataArray.count-1 {
+    
+            for i in 0...self.userList.count-1 {
                 self.userList[i].text = self.gameDataArray[i].username
                 self.scoreList[i].text = self.gameDataArray[i].score
             }
+            print(self.userList[0].text)
         })
     }
     

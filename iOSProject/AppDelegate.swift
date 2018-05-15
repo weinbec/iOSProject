@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
@@ -19,9 +20,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID       ///google
+        GIDSignIn.sharedInstance().delegate = self                                      ///google
+       
         return true
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {    ///google
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+    }
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {  ///added for google login
+        if let error = error {
+            print("error with google auth \(error.localizedDescription)")
+            return
+        } else{
+            print("you are now signed in with Google \(user.profile.email)")
+            //TODO: Use that to sign in with firebase
+            guard let authentication = user.authentication else {return }
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            Auth.auth().signIn(with: credential) { (user, error) in
+                if let error = error {
+                    print("Error firebase auth with goolge token \(error.localizedDescription)")
+                }
+                if let user = user {
+                    print("firebase uid = \(user.uid)")
+                    self.handleLogin()
+                }
+            }
+        }
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -102,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     @objc func handleLogout() {
-        //GIDSignIn.sharedInstance().signOut()  ///chance to save who you are signed in as with google, do not really need this line
+        GIDSignIn.sharedInstance().signOut()  ///chance to save who you are signed in as with google, do not really need this line
         do {
             try Auth.auth().signOut()
         } catch {
@@ -114,6 +141,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func showloginViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+    }
+    func showPasswordViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let passwordViewController = storyboard.instantiateViewController(withIdentifier: "PasswordViewController")
+        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "NavController")
     }
 
 }

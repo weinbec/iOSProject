@@ -17,7 +17,7 @@ class checkColorViewController: UIViewController {
     @IBOutlet var cardButton: [UIButton]!
     
     @IBAction func cardButtonPressed(_ sender: Any) {
-        print("button pressed")
+        let button = sender as! UIButton
     }
     
     @IBAction func pressedDone(_ sender: Any) {
@@ -26,8 +26,6 @@ class checkColorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = colorOn
-        print(cardButton.count)
-        print("---")
     }
     
     override func viewDidAppear(_ animated: Bool) {

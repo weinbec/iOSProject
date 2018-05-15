@@ -366,26 +366,26 @@
                         <viewLayoutGuide key="safeArea" id="57D-9p-OHP"/>
                     </view>
                     <connections>
-                        <outletCollection property="scoreList" destination="bA4-0c-q8H" collectionClass="NSMutableArray" id="QyJ-Wc-ZvO"/>
-                        <outletCollection property="scoreList" destination="P3d-1b-cT6" collectionClass="NSMutableArray" id="4Vd-OY-yiK"/>
-                        <outletCollection property="scoreList" destination="rUb-QW-duQ" collectionClass="NSMutableArray" id="zeP-Vc-0Kb"/>
-                        <outletCollection property="scoreList" destination="j41-UI-PZm" collectionClass="NSMutableArray" id="47U-p6-G5k"/>
-                        <outletCollection property="scoreList" destination="UsF-BN-Zt3" collectionClass="NSMutableArray" id="VEM-3D-3Hf"/>
-                        <outletCollection property="scoreList" destination="bbp-Tw-oVC" collectionClass="NSMutableArray" id="ae7-Tn-MhJ"/>
-                        <outletCollection property="scoreList" destination="NC6-cw-egv" collectionClass="NSMutableArray" id="II5-nx-Anm"/>
-                        <outletCollection property="scoreList" destination="eZy-RD-84Z" collectionClass="NSMutableArray" id="cMZ-09-3g2"/>
-                        <outletCollection property="scoreList" destination="fg7-w5-8aH" collectionClass="NSMutableArray" id="qws-xl-Dyi"/>
-                        <outletCollection property="scoreList" destination="Yk4-0j-Ag3" collectionClass="NSMutableArray" id="tL3-4k-y48"/>
-                        <outletCollection property="userList" destination="27C-wc-vzd" collectionClass="NSMutableArray" id="Zf4-eD-NhN"/>
-                        <outletCollection property="userList" destination="JHC-AK-JYu" collectionClass="NSMutableArray" id="yXJ-QU-tJK"/>
-                        <outletCollection property="userList" destination="jwv-mj-63y" collectionClass="NSMutableArray" id="eR2-CN-puS"/>
-                        <outletCollection property="userList" destination="fIb-Yn-ckn" collectionClass="NSMutableArray" id="8h1-dg-GWM"/>
-                        <outletCollection property="userList" destination="5Lf-W1-Lk8" collectionClass="NSMutableArray" id="d5t-3p-tv5"/>
-                        <outletCollection property="userList" destination="rjC-dj-Pf1" collectionClass="NSMutableArray" id="jla-WO-jHd"/>
-                        <outletCollection property="userList" destination="NFF-pg-zLQ" collectionClass="NSMutableArray" id="Fof-PS-hVc"/>
-                        <outletCollection property="userList" destination="570-P2-eYs" collectionClass="NSMutableArray" id="2zR-gI-qCV"/>
-                        <outletCollection property="userList" destination="Sej-aC-hZN" collectionClass="NSMutableArray" id="CeY-Dm-i5Z"/>
-                        <outletCollection property="userList" destination="3yP-Ae-dS5" collectionClass="NSMutableArray" id="Se1-zd-HjS"/>
+                        <outletCollection property="userList" destination="5Lf-W1-Lk8" collectionClass="NSMutableArray" id="6D7-Hk-rtG"/>
+                        <outletCollection property="userList" destination="27C-wc-vzd" collectionClass="NSMutableArray" id="OsZ-ba-gqh"/>
+                        <outletCollection property="userList" destination="JHC-AK-JYu" collectionClass="NSMutableArray" id="hFi-We-b6t"/>
+                        <outletCollection property="userList" destination="Sej-aC-hZN" collectionClass="NSMutableArray" id="ctI-bg-2Bx"/>
+                        <outletCollection property="userList" destination="NFF-pg-zLQ" collectionClass="NSMutableArray" id="raJ-1g-qb8"/>
+                        <outletCollection property="userList" destination="fIb-Yn-ckn" collectionClass="NSMutableArray" id="0zx-nU-Uwg"/>
+                        <outletCollection property="userList" destination="570-P2-eYs" collectionClass="NSMutableArray" id="ikM-G3-d0T"/>
+                        <outletCollection property="userList" destination="jwv-mj-63y" collectionClass="NSMutableArray" id="vNL-RW-UGs"/>
+                        <outletCollection property="userList" destination="rjC-dj-Pf1" collectionClass="NSMutableArray" id="h06-zq-OWy"/>
+                        <outletCollection property="userList" destination="3yP-Ae-dS5" collectionClass="NSMutableArray" id="kNZ-XO-Fjo"/>
+                        <outletCollection property="scoreList" destination="eZy-RD-84Z" collectionClass="NSMutableArray" id="r5z-p1-ozM"/>
+                        <outletCollection property="scoreList" destination="bbp-Tw-oVC" collectionClass="NSMutableArray" id="FK0-Bn-wcM"/>
+                        <outletCollection property="scoreList" destination="Yk4-0j-Ag3" collectionClass="NSMutableArray" id="3Rf-Jd-e9f"/>
+                        <outletCollection property="scoreList" destination="NC6-cw-egv" collectionClass="NSMutableArray" id="Wqb-xz-3M8"/>
+                        <outletCollection property="scoreList" destination="P3d-1b-cT6" collectionClass="NSMutableArray" id="mND-OF-Vyj"/>
+                        <outletCollection property="scoreList" destination="UsF-BN-Zt3" collectionClass="NSMutableArray" id="Cu5-8f-4Cd"/>
+                        <outletCollection property="scoreList" destination="rUb-QW-duQ" collectionClass="NSMutableArray" id="zOP-mB-TCr"/>
+                        <outletCollection property="scoreList" destination="j41-UI-PZm" collectionClass="NSMutableArray" id="bfp-Zo-eWc"/>
+                        <outletCollection property="scoreList" destination="fg7-w5-8aH" collectionClass="NSMutableArray" id="bNc-zK-YGH"/>
+                        <outletCollection property="scoreList" destination="bA4-0c-q8H" collectionClass="NSMutableArray" id="CUd-HG-ZXZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4G-fL-bNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,7 +419,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAK-NX-uhn">
-                                <rect key="frame" x="144" y="262" width="126" height="55"/>
+                                <rect key="frame" x="144" y="106" width="126" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85605569950000004" green="0.85605569950000004" blue="0.85605569950000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login"/>
@@ -427,35 +427,24 @@
                                     <segue destination="467-Qh-hAZ" kind="show" id="3x7-GF-dQF"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbB-V8-0an">
-                                <rect key="frame" x="122" y="142" width="171" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdJ-15-kie">
-                                <rect key="frame" x="122" y="196" width="171" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2U-gC-JT8">
-                                <rect key="frame" x="154" y="381" width="107" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Account"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMU-Xw-iDP">
-                                <rect key="frame" x="185" y="500" width="64" height="30"/>
+                                <rect key="frame" x="138" y="190" width="138" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="33"/>
                                 <state key="normal" title="Rose Fire">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.2106920578" blue="0.13667111809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roseFireLogin:" destination="CaA-n8-uE7" eventType="touchUpInside" id="SCz-ia-ANK"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O74-gW-6hc" customClass="GIDSignInButton">
+                                <rect key="frame" x="87" y="328" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -469,7 +458,7 @@
                         <viewLayoutGuide key="safeArea" id="K57-Ab-eVZ"/>
                     </view>
                     <connections>
-                        <outlet property="usernameTextField" destination="QbB-V8-0an" id="ttO-8d-006"/>
+                        <outlet property="googleSignIn" destination="O74-gW-6hc" id="qi6-nQ-2u9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4v8-Iv-W9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1005,14 +994,23 @@
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSk-GU-rns">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="P1p-wg-u9V"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upr-DP-gLQ">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="W8W-Sm-bWs"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVI-gz-igj">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="sh1-dG-zLG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1022,14 +1020,23 @@
                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTt-B8-3J7">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="MFd-3P-4uk"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSs-ZL-O9B">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="R3b-hh-xEe"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoT-oP-D09">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="Io6-yd-lRH"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1041,14 +1048,23 @@
                                                         <state key="normal" title="Button">
                                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="WDG-NH-osf"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QY-se-h6k">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="Gnp-Xs-Nyf"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntG-7R-A7C">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="AdK-5z-Hjh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1058,14 +1074,23 @@
                                                     <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvE-6f-VWM">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="QQb-mw-CSe"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eI-Ok-0WO">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="uN0-zM-qV3"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-lw-PqN">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="0zj-tY-tMc"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1075,14 +1100,23 @@
                                                     <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiF-F4-3g8">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="HrX-EE-IHx"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LL4-ep-VcZ">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="mam-UF-yzp"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzz-gM-F5y">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="PWZ-q7-ePB"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1092,14 +1126,23 @@
                                                     <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFv-jO-bxe">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="iW6-31-IGW"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W13-IW-Z9k">
                                                         <rect key="frame" x="138" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="jak-yh-pEL"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4t-aQ-FDN">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="74.666666666666671"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="cardButtonPressed:" destination="by9-a3-fWZ" eventType="touchUpInside" id="Rz5-tT-AkX"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1145,6 +1188,7 @@
                                         <state key="normal" title="Done"/>
                                         <connections>
                                             <action selector="pressedDone:" destination="by9-a3-fWZ" eventType="touchUpInside" id="YU5-Zp-LE2"/>
+                                            <segue destination="lL3-5E-xoy" kind="show" id="oew-Fx-s7X"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1202,8 +1246,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="3x7-GF-dQF"/>
+        <segue reference="oew-Fx-s7X"/>
         <segue reference="rGo-id-h3a"/>
-        <segue reference="t8b-Ph-34Q"/>
+        <segue reference="z4w-3o-l4y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

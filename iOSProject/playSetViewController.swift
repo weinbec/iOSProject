@@ -82,6 +82,12 @@ class playSetViewController: UIViewController {
                 first.setImage(game.oneMore().pic, for: UIControlState.normal)
                 second.setImage(game.oneMore().pic, for: UIControlState.normal)
                 third.setImage(game.oneMore().pic, for: UIControlState.normal)
+                if game.checkSetInGroup(theDeck: game.cardsOnTable){
+                    
+                } else {
+                    print("print THERE IS NO SET IN HERE")
+                }
+                print("got hereee")
             } else {
                 print("no")
             }
@@ -95,12 +101,17 @@ class playSetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        usernameLabel.text = username
         game.startGame()
         for i in 0...(game.cardsOnTable.count-1) {
             var buttonImg: UIImage
             buttonImg = game.cardsOnTable[i].pic
             cardButtons[i].setImage(buttonImg, for: .normal)
+        }
+        if game.checkSetInGroup(theDeck: game.cardsOnTable){
+            
+        } else {
+            print("print THERE IS NO SET IN HERE")
         }
         gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerFunc), userInfo: nil, repeats: true)
         
@@ -110,7 +121,6 @@ class playSetViewController: UIViewController {
     @objc func timerFunc(){
       
         if timeCount == 0 {
-            print("timer done")
             gameTimer.invalidate()
             gameOver()
         } else {
@@ -120,11 +130,33 @@ class playSetViewController: UIViewController {
     }
     
     func gameOver(){
-        setCollectionRef = Firestore.firestore().collection("setGame")
-        let newGameSession = gameSession(username: (Auth.auth().currentUser?.uid)!, ////username
-                                         score: "\(setsFound)")
-        
-        self.setCollectionRef.addDocument(data: newGameSession.data)
+        let alertController = UIAlertController(title:"Game Over", message: "Score: \(setsFound)", preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) in
+            print("You pressed Cancel")
+            
+        }
+        alertController.addAction(cancelAction)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Name for High Score"
+        }
+        //////////
+        let createPhotoAction = UIAlertAction(title: "Submit Score", style: UIAlertActionStyle.default) { (action) in
+            self.setCollectionRef = Firestore.firestore().collection("setGame")
+           let captionTextField = alertController.textFields![0]
+            let newGameSession = gameSession(username: captionTextField.text!, ////username
+                score: "\(self.setsFound)")
+            
+            self.setCollectionRef.addDocument(data: newGameSession.data)
+            
+        }
+        //////////
+        alertController.addAction(createPhotoAction)
+        present(alertController, animated: true, completion: nil)
+//        setCollectionRef = Firestore.firestore().collection("setGame")
+//        let newGameSession = gameSession(username: (Auth.auth().currentUser?.uid)!, ////username
+//                                         score: "\(setsFound)")
+//
+//        self.setCollectionRef.addDocument(data: newGameSession.data)
     }
     
     func findButtonOfCard(aCard: card) -> UIButton {
@@ -165,7 +197,6 @@ class playSetViewController: UIViewController {
         super.viewWillAppear(animated)
        
     }
-    
     
     @objc func updateView(){
         cardLeftLabel.text = String(game.cardsInDeck.count)

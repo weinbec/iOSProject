@@ -18,8 +18,9 @@ class loginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     var username = ""
     
+    @IBOutlet weak var googleSignIn: GIDSignInButton!
     override func viewDidLoad() {
-        print("in login")
+        GIDSignIn.sharedInstance().uiDelegate = self
         
     }
     
